@@ -1,0 +1,22 @@
+/* ======================================= */
+/* CSS for control sap.ui.rta/ContextMenu  */
+/* Evening Horizon theme                   */
+/* ======================================= */
+
+.sapUI5Scope {
+	--_sap_ui_rta_ContextMenu_BorderLightColor: var(--sapToolbar_Background);
+	--_sap_ui_rta_ContextMenu_BorderDarkColor: var(--sapLegendColor7);
+	--_sap_ui_rta_ContextMenu_BorderRadius: var(--sapGroup_BorderCornerRadius);
+}
+
+.sapUiRtaMode {
+
+	.sapUiDtContextMenu {
+
+		&.sapMMenu {
+			border: 0.188rem dashed var(--_sap_ui_rta_ContextMenu_BorderDarkColor); /* 2px */
+			border-image: none;
+			border-radius: var(--_sap_ui_rta_ContextMenu_BorderRadius);
+		}
+	}
+}

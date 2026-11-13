@@ -1,0 +1,66 @@
+/* ================================== */
+/* CSS for control sap.m/Popover      */
+/* Horizon High Contrast Black theme  */
+/* ================================== */
+
+.sapUI5Scope {
+	--_sap_m_Popover_ThickShadowSize: 0.125rem;
+	--_sap_m_Popover_BorderCornerRadius: var(--sapPopover_BorderCornerRadius);
+}
+
+.sapMPopoverWithBar > .sapMPopoverArr {
+
+	&.sapMPopoverArrUp::after,
+	&.sapMPopoverHeaderAlignArr::after {
+		background-color: var(--sapPageHeader_Background);
+	}
+}
+
+.sapMPopoverWithFooter > .sapMPopoverArr.sapMPopoverFooterAlignArr::after {
+	background-color: var(--sapPageFooter_Background);
+}
+
+.sapMPopover .sapMIBar.sapMHeader-CTX {
+	background-color: var(--sapPageHeader_Background);
+}
+
+.sapMPopover .sapMIBar.sapMSubHeader-CTX {
+	background-color: var(--sapPageHeader_Background);
+}
+
+.sapMPopoverHeader,
+.sapMPopoverSubHeader {
+	position: relative;
+	z-index: 2;
+}
+
+.sapMPopover {
+
+	.sapMPopoverCont {
+		padding: 0.0625rem;
+	}
+}
+
+/* pointing downward arrow */
+.sapMPopoverArrDown::after {
+	margin: -0.5rem 0 0 0.125rem;
+}
+
+/* pointing right arrow */
+.sapMPopoverArrRight::after {
+	margin: 0.1875rem 0 0 -0.5rem;
+}
+
+/* pointing upward arrow */
+.sapMPopoverArrUp::after {
+	margin: 0.3125rem 0 0 0.1875rem;
+}
+
+/* pointing left arrow */
+.sapMPopoverArrLeft::after {
+	margin: 0.125rem 0 0 0.3125rem;
+}
+
+.sapMPopoverResizeHandle {
+	color: var(--sapButton_Lite_TextColor);
+}

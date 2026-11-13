@@ -1,0 +1,45 @@
+/* ============================== */
+/* CSS for control sap.m/Popover  */
+/* Evening Horizon theme          */
+/* ============================== */
+
+.sapUI5Scope {
+	--_sap_m_Popover_BorderCornerRadius: var(--sapPopover_BorderCornerRadius);
+}
+
+.sapMPopoverWithBar > .sapMPopoverArr {
+
+	&.sapMPopoverArrUp::after,
+	&.sapMPopoverHeaderAlignArr::after {
+		background-color: var(--sapPageHeader_Background);
+	}
+}
+
+.sapMPopoverWithFooter > .sapMPopoverArr.sapMPopoverFooterAlignArr::after {
+	background-color: var(--sapPageFooter_Background);
+}
+
+.sapMPopover .sapMIBar.sapMHeader-CTX {
+	background-color: var(--sapPageHeader_Background);
+}
+
+.sapMPopover .sapMIBar.sapMSubHeader-CTX {
+	background-color: var(--sapPageHeader_Background);
+}
+
+.sapMPopoverHeader,
+.sapMPopoverSubHeader {
+	position: relative;
+	z-index: 2;
+}
+
+.sapMPopover {
+
+	.sapMPopoverCont {
+		padding: 0.0625rem;
+	}
+}
+
+.sapMPopoverResizeHandle {
+	color: var(--sapButton_Lite_TextColor);
+}

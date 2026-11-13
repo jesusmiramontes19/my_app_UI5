@@ -1,0 +1,77 @@
+/* ================================== */
+/* CSS for control sap.ui.dt/Overlay  */
+/* Horizon High Contrast White theme  */
+/* ================================== */
+
+.sapUI5Scope {
+	--_sap_ui_dt_Overlay_FocusBorderColor: var(--sapContent_FocusColor);
+	--_sap_ui_dt_Overlay_CuttedBackgroundColor: var(--sapContent_Placeholderloading_Background);
+	--_sap_ui_dt_Overlay_HighlightOutlineColor: var(--sapHighlightColor);
+	--_sap_ui_dt_Overlay_BorderRadius: var(--sapButton_BorderCornerRadius);
+	--_sap_ui_dt_Overlay_HoverBackgroundColor: ~'hsl(from var(--sapLegendColor7) h s l / .15)';
+	--_sap_ui_dt_Overlay_DropZoneBackgroundColor: ~'hsl(from var(--sapSelectedColor) h s l / .15)';
+	--_sap_ui_dt_Overlay_SelectionOutlineColor: var(--sapLegendColor7);
+	--_sap_ui_dt_Overlay_BoxShadowColor: ~'hsl(from var(--sapContent_ContrastShadowColor) h s l / .5)';
+}
+
+.sapUiDtOverlayFocusable {
+
+	&:focus {
+
+		&::before {
+			border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+			border: none;
+			outline: 0.125rem dotted var(--_sap_ui_dt_Overlay_FocusBorderColor); /* 2px */
+			outline-offset: -0.25rem; /* 4px */
+		}
+	}
+}
+
+.sapUiDtOverlaySelected {
+	box-shadow: none !important;
+
+	&::after {
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+	}
+
+	&.sapUiDtOverlayHover {
+
+		&::after {
+			border: 0.125rem solid var(--_sap_ui_dt_Overlay_SelectionOutlineColor); /* 2px */
+			outline-offset: -0.25rem; /* 4px */
+		}
+	}
+}
+
+.sapUiDtOverlayTargetZone {
+
+	&::after {
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+	}
+}
+
+.sapUiDtOverlayCutted {
+	opacity: 0.7;
+
+	&::after {
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+	}
+}
+
+.sapUiDtOverlayHighlighted:not(.sapUiDtOverlaySelected) {
+
+	&::after {
+		box-shadow: none;
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+	}
+}
+
+.sapUiDtOverlayHover {
+
+	&::after {
+		box-shadow: 0 0 1rem 0 var(--_sap_ui_dt_Overlay_BoxShadowColor), 0 0 0 0.125rem var(--_sap_ui_dt_Overlay_HoverBackgroundColor);
+		outline: 0.125rem dotted var(--_sap_ui_dt_Overlay_SelectionOutlineColor); /* 2px */
+		outline-offset: -0.125rem; /* 2px */
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+	}
+}

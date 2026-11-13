@@ -1,0 +1,157 @@
+/* ============================================ */
+/* CSS for control sap.ui.core/tooltip.Tooltip  */
+/* Base theme                                   */
+/* ============================================ */
+
+// Arrow: a rotated square, clipped by an overflow:hidden container so only the outer tip shows.
+@_sap_ui_core_Tooltip_ArrowWidth: 0.75rem;
+// A square rotated 45deg has diagonal = side * sqrt(2); size the side so the diagonal == ArrowWidth.
+@_sap_ui_core_Tooltip_ArrowSquareSize: (@_sap_ui_core_Tooltip_ArrowWidth / 1.4142);
+@_sap_ui_core_Tooltip_ArrowRing: 0rem;
+// Visible triangle height = tip distance from the box seam = half the diagonal = ArrowWidth/2.
+@_sap_ui_core_Tooltip_ArrowHeight: (@_sap_ui_core_Tooltip_ArrowWidth / 2);
+// Full stick-out toward the opener = tip height + ring.
+@_sap_ui_core_Tooltip_ArrowProtrusion: @_sap_ui_core_Tooltip_ArrowHeight + @_sap_ui_core_Tooltip_ArrowRing;
+// Container cross-axis span along the box edge.
+@_sap_ui_core_Tooltip_ArrowContainerSize: @_sap_ui_core_Tooltip_ArrowWidth + (2 * @_sap_ui_core_Tooltip_ArrowRing);
+
+// Suppresses long-press text selection and the iOS touch callout on the tooltip host.
+// Descendant selectors also cover text in a nested .sapUiSelectable (e.g. sap.m.Title).
+html.sap-phone .sapUiSelectable.sapUiCoreTooltipHostSuppressSelection,
+html.sap-phone .sapUiCoreTooltipHostSuppressSelection .sapUiSelectable,
+html.sap-tablet:not(.sap-desktop) .sapUiSelectable.sapUiCoreTooltipHostSuppressSelection,
+html.sap-tablet:not(.sap-desktop) .sapUiCoreTooltipHostSuppressSelection .sapUiSelectable,
+.sapUiCoreTooltipHostSuppressSelection,
+.sapUiCoreTooltipHostSuppressSelection .sapUiSelectable {
+	-webkit-touch-callout: none; // suppresses the iOS context menu on long-press
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.sapUiCoreTooltip {
+	position: absolute;
+	box-sizing: border-box;
+	border-radius: 0.25rem;
+	background-color: var(--sapIndicationColor_9_Background);
+	box-shadow: var(--sapContent_Lite_Shadow);
+	min-height: 1.5rem;
+	max-width: 17rem;
+	min-width: 0;
+	padding: 5px 0.5rem;
+	color: var(--sapContent_ContrastTextColor);
+	font-size: var(--sapFontSmallSize);
+
+	.sapUiCoreTooltipCont {
+		overflow-y: auto;
+	}
+
+	.sapUiCoreTooltipCont,
+	.sapUiCoreTooltipText {
+		color: var(--sapContent_ContrastTextColor);
+		font-size: var(--sapFontSmallSize);
+	}
+
+	.sapUiCoreTooltipText {
+		overflow-wrap: break-word;
+	}
+
+	// Rotated square carrying the box background + shadow.
+	.sapUiCoreTooltipArrow {
+		position: absolute;
+		width: @_sap_ui_core_Tooltip_ArrowContainerSize;
+		height: @_sap_ui_core_Tooltip_ArrowContainerSize;
+		overflow: hidden;
+		pointer-events: none;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: @_sap_ui_core_Tooltip_ArrowSquareSize;
+			height: @_sap_ui_core_Tooltip_ArrowSquareSize;
+			background-color: var(--sapIndicationColor_9_Background);
+			box-shadow: var(--sapContent_Lite_Shadow);
+		}
+	}
+
+	&.sapUiCoreTooltip-Top .sapUiCoreTooltipArrow {
+		top: 100%;
+		height: @_sap_ui_core_Tooltip_ArrowProtrusion;
+
+		&::after {
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+	}
+
+	&.sapUiCoreTooltip-Bottom .sapUiCoreTooltipArrow {
+		bottom: 100%;
+		height: @_sap_ui_core_Tooltip_ArrowProtrusion;
+
+		&::after {
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 50%) rotate(45deg);
+		}
+	}
+
+	&.sapUiCoreTooltip-Left .sapUiCoreTooltipArrow {
+		left: 100%;
+		width: @_sap_ui_core_Tooltip_ArrowProtrusion;
+
+		&::after {
+			left: 0;
+			top: 50%;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+	}
+
+	&.sapUiCoreTooltip-Right .sapUiCoreTooltipArrow {
+		right: 100%;
+		width: @_sap_ui_core_Tooltip_ArrowProtrusion;
+
+		&::after {
+			right: 0;
+			top: 50%;
+			transform: translate(50%, -50%) rotate(45deg);
+		}
+	}
+
+	// Extends the clickable area across the arrow protrusion so the tooltip stays open there.
+	&.sapUiCoreTooltip-Top::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: @_sap_ui_core_Tooltip_ArrowProtrusion;
+		top: 100%;
+		right: 0;
+	}
+
+	&.sapUiCoreTooltip-Bottom::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: @_sap_ui_core_Tooltip_ArrowProtrusion;
+		top: -@_sap_ui_core_Tooltip_ArrowProtrusion;
+		right: 0;
+	}
+
+	&.sapUiCoreTooltip-Left::before {
+		content: '';
+		position: absolute;
+		width: @_sap_ui_core_Tooltip_ArrowProtrusion;
+		height: 100%;
+		top: 0;
+		right: -@_sap_ui_core_Tooltip_ArrowProtrusion;
+	}
+
+	&.sapUiCoreTooltip-Right::after {
+		content: '';
+		position: absolute;
+		width: @_sap_ui_core_Tooltip_ArrowProtrusion;
+		height: 100%;
+		top: 0;
+		left: -@_sap_ui_core_Tooltip_ArrowProtrusion;
+	}
+}

@@ -1,0 +1,63 @@
+/* ================================== */
+/* CSS for control sap.m/NewsContent  */
+/* Morning Horizon theme              */
+/* ================================== */
+
+.sapMNwC {
+	background-color: ~'hsl(from var(--sapTile_Background) h s l / .6)';
+	height: 3.625rem;
+}
+
+.sapMTileCnt.News {
+
+	.sapMNwC {
+
+		.sapMNwCSbh {
+			color: var(--sapTile_OverlayForegroundColor);
+			line-height: normal;
+			font-size: var(--sapFontSize);
+		}
+
+		.sapMNwCCTxt .sapMText,
+		.sapMNwCCTxt .sapMFT {
+			font-size: var(--sapFontSize);
+			line-height: normal;
+			font-weight: bold;
+			color: var(--sapTile_OverlayForegroundColor);
+		}
+	}
+}
+
+.Stretch {
+
+	.sapMTileCnt.News .sapMNwC {
+
+		.sapMNwCCTxt .sapMText {
+			font-size: var(--sapFontLargeSize);
+			color: var(--sapTextColor);
+		}
+
+		.sapMNwCCTxt .sapMFT {
+			font-size: 0.938rem;
+			color: var(--sapTextColor);
+		}
+
+		.sapMNwCSbh {
+			color: var(--sapTextColor);
+		}
+	}
+}
+
+.sapMTileSmallPhone {
+
+	.sapMTileCnt.News {
+
+		.sapMTileCntContent {
+			height: 3.25rem;
+
+			.sapMFT {
+				font-size: var(--sapFontSmallSize);
+			}
+		}
+	}
+}

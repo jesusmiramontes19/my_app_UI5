@@ -1,0 +1,25 @@
+/* ====================================== */
+/* CSS for control sap.ui.dt/ContextMenu  */
+/* Morning Horizon theme                  */
+/* ====================================== */
+
+.sapUI5Scope {
+	--_sap_ui_dt_ContextMenu_BorderRadius: var(--sapField_BorderCornerRadius);
+}
+
+.sapUiDtContextMenu.sapMMenu {
+
+	.sapMMenuList {
+
+		.sapMMenuItem {
+			border-radius: var(--_sap_ui_dt_ContextMenu_BorderRadius);
+
+			&:focus {
+
+				&.sapMMenuItemDisabled {
+					outline: none;
+				}
+			}
+		}
+	}
+}

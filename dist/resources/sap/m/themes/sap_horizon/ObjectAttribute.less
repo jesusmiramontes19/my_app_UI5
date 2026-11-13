@@ -1,0 +1,71 @@
+/* ====================================== */
+/* CSS for control sap.m/ObjectAttribute  */
+/* Horizon theme                          */
+/* ====================================== */
+
+@_sap_m_ObjectAttribute_ListTextShadowColor: none;
+
+.sapMObjectAttributeActive.sapMLnkLargeReactiveArea {
+	.sapMObjectAttributeTitle,
+	.sapMObjectAttributeColon,
+	.sapMObjectAttributeText,
+	.sapMObjectAttributeText > .sapMLnk {
+		line-height: 1.5rem;
+	}
+}
+
+.sapMObjectAttributeActive .sapMObjectAttributeText:focus {
+	position: relative;
+}
+
+.sapMObjectAttributeActive .sapMObjectAttributeText:active,
+.sapMObjectAttributeActive .sapMObjectAttributeText:hover {
+	text-decoration: none;
+	color: var(--sapLink_Hover_Color);
+}
+
+html.sap-desktop .sapMObjectAttributeActive .sapMObjectAttributeText:focus {
+	border-radius: 0.125rem;
+	background-color: var(--sapContent_FocusColor);
+	color: var(--sapContent_ContrastTextColor);
+	text-shadow: none;
+}
+
+.sapMObjectAttributeActive .sapMObjectAttributeText:focus-visible {
+	border-radius: 0.125rem;
+	background-color: var(--sapContent_FocusColor);
+	color: var(--sapContent_ContrastTextColor);
+	text-shadow: none;
+}
+
+/*=========================================== */
+/* Custom design for Responsive Object Header */
+/*=========================================== */
+
+.sapMOHR .sapMObjectAttributeActive .sapMObjectAttributeText:active,
+.sapMOHR .sapMObjectAttributeActive .sapMObjectAttributeText:hover,
+html.sap-desktop .sapMOHR .sapMObjectAttributeActive .sapMObjectAttributeText:focus,
+.sapMOHR .sapMObjectAttributeActive .sapMObjectAttributeText:focus-visible {
+	text-decoration: underline;
+}
+
+/*=========================================== */
+/* Custom design for Static Object Header     */
+/*=========================================== */
+
+.sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText:active,
+.sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText:hover,
+html.sap-desktop .sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText:focus,
+.sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText:focus-visible {
+	text-decoration: underline;
+}
+
+html.sap-desktop .sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText:focus,
+.sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText:focus-visible:hover {
+	text-decoration: none;
+}
+
+.sapMOHR .sapMObjectAttributeActive .sapMObjectAttributeText,
+.sapMOH .sapMObjectAttributeActive .sapMObjectAttributeText {
+	text-shadow: @_sap_m_ObjectAttribute_ListTextShadowColor;
+}

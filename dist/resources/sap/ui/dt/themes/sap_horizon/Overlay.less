@@ -1,0 +1,70 @@
+/* ================================== */
+/* CSS for control sap.ui.dt/Overlay  */
+/* Morning Horizon theme              */
+/* ================================== */
+
+.sapUI5Scope {
+	--_sap_ui_dt_Overlay_BorderRadius: var(--sapButton_BorderCornerRadius);
+	--_sap_ui_dt_Overlay_BoxShadow: var(--sapContent_Shadow2);
+	--_sap_ui_dt_Overlay_DropZoneBackgroundColor: ~'hsl(from var(--sapContent_ImagePlaceholderForegroundColor) h s l / .1)';
+	--_sap_ui_dt_Overlay_CuttedBackgroundColor: var(--sapList_SelectionBackgroundColor);
+	--_sap_ui_dt_Overlay_HoverBackgroundColor: ~'hsl(from var(--sapLegendColor7) h s l / .05)';
+	--_sap_ui_dt_Overlay_TargetZoneOutlineColor: var(--sapSelectedColor);
+	--_sap_ui_dt_Overlay_SelectionOutlineColor: var(--sapLegendColor7);
+	--_sap_ui_dt_Overlay_CuttedBorderColor: var(--sapLegendColor7);
+}
+
+.sapUiDtOverlayFocusable {
+
+	&:focus {
+
+		&::before {
+			border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+			outline: 0.0625rem dotted var(--_sap_ui_dt_Overlay_FocusBorderColor);
+			border: none;
+			outline-offset: -0.125rem;
+		}
+	}
+}
+
+.sapUiDtOverlaySelected {
+	box-shadow: none !important;
+
+	&::after {
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+		transition: box-shadow 0.25s;
+		box-shadow: var(--_sap_ui_dt_Overlay_BoxShadow);
+	}
+}
+
+.sapUiDtOverlayTargetZone {
+
+	&::after {
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+		transition: box-shadow .25s;
+		box-shadow: var(--_sap_ui_dt_Overlay_BoxShadow);
+	}
+}
+
+.sapUiDtOverlayCutted {
+
+	&::after {
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+	}
+}
+
+.sapUiDtOverlayHighlighted:not(.sapUiDtOverlaySelected) {
+
+	&::after {
+		box-shadow: none;
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+	}
+}
+
+.sapUiDtOverlayHover {
+
+	&::after {
+		border-radius: var(--_sap_ui_dt_Overlay_BorderRadius);
+		border: none;
+	}
+}

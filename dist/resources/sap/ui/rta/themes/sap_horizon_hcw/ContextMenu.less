@@ -1,0 +1,40 @@
+/* ======================================= */
+/* CSS for control sap.ui.rta/ContextMenu  */
+/* Horizon High Contrast White theme       */
+/* ======================================= */
+
+.sapUI5Scope {
+	--_sap_ui_rta_ContextMenu_BorderLightColor: var(--sapShell_Background);
+	--_sap_ui_rta_ContextMenu_BorderDarkColor: var(--sapLegendColor7);
+	--_sap_ui_rta_ContextMenu_BorderRadius: var(--sapButton_BorderCornerRadius);
+	--_sap_ui_rta_ContextMenu_BoxShadowColor: ~'hsl(from var(--sapContent_ContrastShadowColor) h s l / .5)';
+}
+
+.sapUiRtaMode {
+
+	.sapUiDtContextMenu {
+
+		&.sapMMenu {
+			border: 0.188rem dashed var(--_sap_ui_rta_ContextMenu_BorderDarkColor); /* 2px */
+			border-image: none;
+			border-radius: var(--_sap_ui_rta_ContextMenu_BorderRadius);
+			box-shadow: 0 0 1rem 0 var(--_sap_ui_rta_ContextMenu_BoxShadowColor), 0 0 0 0.125rem var(--_sap_ui_rta_ContextMenu_BorderDarkColor);
+		}
+	}
+}
+
+.sapUiDtContextMenu.sapMMenu {
+
+	.sapMMenuList {
+
+		.sapMMenuItem {
+
+			&:focus {
+
+				&.sapMMenuItemDisabled {
+					outline: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+/* =================================== */
+/* CSS for control sap.ui.rta/Overlay  */
+/* Horizon High Contrast Black theme   */
+/* =================================== */
+
+.sapUI5Scope {
+	--_sap_ui_rta_Overlay_ResizeHandleColor: ~'hsl(from var(--sapSuccessBorderColor) h s calc(l - 25))';
+	--_sap_ui_rta_Overlay_PlaceholderBackgroundColor: ~'hsl(from var(--sapField_PlaceholderTextColor) h s calc(l - 30))';
+}
+
+.sapUiRta {
+
+	.sapUiDtOverlayDropZone {
+
+		> .sapUiDtOverlayChildren {
+
+			> .sapUiRtaOverlayPlaceholder {
+				background: var(--_sap_ui_rta_Overlay_PlaceholderBackgroundColor) !important;
+
+				/* no "focus" border */
+				&:focus {
+
+					&::before {
+						content: none;
+					}
+				}
+
+				/* all descendants */
+				* {
+					background: var(--_sap_ui_rta_Overlay_PlaceholderBackgroundColor);
+
+					/* no "focus" border */
+					&:focus {
+
+						&::before {
+							content: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* HCB: white full-screen border instead of green. */
+.sapUiRtaAdaptationBorder.sapUiRtaAdaptationBorderVisible {
+	border-color: var(--sapShell_BorderColor);
+}

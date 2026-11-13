@@ -1,0 +1,70 @@
+/* ====================================== */
+/* CSS for control sap.ui.dt/ContextMenu  */
+/* Horizon High Contrast Black theme      */
+/* ====================================== */
+
+.sapUI5Scope {
+	--_sap_ui_dt_ContextMenu_BorderRadius: var(--sapButton_BorderCornerRadius);
+	--_sap_ui_dt_ContextMenu_OpenSubMenuBackgroundColor: var(--sapSelectedColor);
+}
+
+.sapUiDtContextMenu.sapMMenu {
+
+	.sapMMenuList {
+
+		.sapMMenuItem {
+
+			.sapMMenuEndContent {
+
+				.sapMBtn {
+
+					&:focus-visible > .sapMFocusable,
+					&:focus > .sapMFocusable {
+						outline: none;
+					}
+				}
+			}
+
+			&.sapMMenuItemDisabled {
+				opacity: var(--_sap_ui_dt_ContextMenu_EnabledOpacity);
+			}
+
+			&:focus {
+				border-radius: var(--_sap_ui_dt_ContextMenu_BorderRadius);
+			}
+
+			&.sapMMenuItemSubMenuOpen {
+				border-radius: var(--_sap_ui_dt_ContextMenu_BorderRadius);
+
+				&:not(:hover) {
+					background-color: var(--_sap_ui_dt_ContextMenu_OpenSubMenuBackgroundColor);
+				}
+			}
+
+			&.sapUiDtContextMenuControlTitle {
+
+				&:focus {
+					outline: none;
+					border-radius: 0;
+
+					.sapMBtn {
+
+						.sapMFocusable {
+							outline: 0.125rem dotted var(--sapContent_FocusColor);
+							outline-offset: -0.125rem;
+							border-color: transparent;
+						}
+					}
+				}
+			}
+
+			.sapUiDtContextMenuViewChanges.sapMBtn {
+
+				.sapMBtnInner {
+					border-radius: var(--_sap_ui_dt_ContextMenu_BorderRadius);
+					outline: none;
+				}
+			}
+		}
+	}
+}
